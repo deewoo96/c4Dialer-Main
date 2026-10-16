@@ -7,7 +7,7 @@ workflows:
       xcode: latest
       cocoapods: default
     integrations:
-      app_store_connect: AuthKey_8TV86L4S9R.p8   # <-- Match the name of your key in Codemagic settings here
+      app_store_connect: "Codemagic vivek"   # <-- Match the name of your key in Codemagic settings here
     scripts:
       - name: Get Flutter packages
         script: flutter pub get
