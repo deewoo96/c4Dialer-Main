@@ -13,7 +13,7 @@ workflows:
         script: flutter pub get
       - name: Set up code signing settings
         script: |
-          app-store-connect fetch-signing-files "metal.hughes.tata_smart_metal_dialer" --type IOS_DISTRIBUTION
+          app-store-connect fetch-signing-files "metal.hughes.tata_smart_metal_dialer" --type IOS_APP_STORE
       - name: Build ipa for release
         script: |
           flutter build ipa --release --build-number=53
