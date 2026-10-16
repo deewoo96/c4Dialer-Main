@@ -8,7 +8,7 @@ workflows:
       cocoapods: default
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: metal.hughes.tata_smart_metal_dialer
+        bundle_identifier: metal.hughes.tatasmartmetaldialer.c4dialerV2
     integrations:
       app_store_connect: "Codemagic vivek"
     scripts:
@@ -16,7 +16,7 @@ workflows:
         script: flutter pub get
       - name: Set up code signing files
         script: |
-          app-store-connect fetch-signing-files "metal.hughes.tata_smart_metal_dialer" --type IOS_APP_STORE --create
+          app-store-connect fetch-signing-files "metal.hughes.tatasmartmetaldialer.c4dialerV2" --type IOS_APP_STORE --create
       - name: Build ipa for release
         script: |
           flutter build ipa --release --build-number=53
