@@ -6,13 +6,14 @@ workflows:
       flutter: stable
       xcode: latest
       cocoapods: default
+    integrations:
+      app_store_connect: AuthKey_8TV86L4S9R.p8   # <-- Match the name of your key in Codemagic settings here
     scripts:
       - name: Get Flutter packages
         script: flutter pub get
       - name: Set up code signing settings
         script: |
-          # Codemagic automatic code signing via App Store Connect API
-          app-store-connect fetch-signing-files "metal.hughes.tatasmartmetaldialer.c4dialerV2" --type IOS_DISTRIBUTION
+          app-store-connect fetch-signing-files "metal.hughes.tata_smart_metal_dialer" --type IOS_DISTRIBUTION
       - name: Build ipa for release
         script: |
           flutter build ipa --release --build-number=53
@@ -20,6 +21,5 @@ workflows:
       - build/ios/ipa/*.ipa
     publishing:
       app_store_connect:
-        auth: integration  # Uses the App Store Connect API integration you linked in Codemagic settings
-        submit_to_testflight: false
-        #, expire_build_pre_check_in: false
+        auth: integration
+        submit_to_app_store: true
