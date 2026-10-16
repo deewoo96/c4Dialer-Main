@@ -124,6 +124,8 @@ flutter:
     - assets/
     - assets/webViewLinks/calc.html
 
+  config:
+    enable-swift-package-manager: false
 
   fonts:
 
