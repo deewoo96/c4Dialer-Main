@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content=
+            "width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        #metal-weight-calculator {
+               box-shadow: 0px 7px 13px 3px #0000001f;
+          margin: 10px;
+          padding: 7px;
+          border-radius: 8px;
+        }
+          .maintableks {
+              border:none;
+          }
+
+          .dimensionks{
+          background: white;
+          border: none!important;
+          border-radius: 3px;
+          padding: 6px;
+        }
+        .maintableks select, .maintableks input {
+          width:100%;
+          height: 36px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size:13px;
+          color: #121212;
+
+        }
+        .maintableks select {
+          height: 38px;
+          width: 100%;
+          border: none;
+          padding: 0;
+          text-align: right;
+          /* padding: 4px 12px; */
+          border: 1px solid #ddd;
+        background: white!important;
+        }
+        .maintableks td {
+         padding: 0px 6px;
+          background: #fff;
+              text-align: center;
+        }
+        .maintableks input.ksbutton {
+          background: #0072ff;
+          width: 49%;
+          height: unset;
+          padding: 15px 0px;
+          border: 1px solid #0072ff;
+          margin: 5px 0px;
+        }
+        .maintableks input.ksbutton.ksclear {
+        background: #d5d5d5;
+          border-radius: 5px;
+          /* border: none; */
+          border: 1px solid #d5d5d5;
+        }
+        .maintableks .material-calc,
+        .maintableks .ksanswer {
+         font-size: 13px;
+          padding: 0;
+          padding-left: 6px;
+          border-radius: 5px;
+          width: 98%;
+        }
+        .maintableks img{
+          height: 75px;
+          position: fixed;
+          right: 20px;
+          top: 25px;
+        }
+        p.calculatedanswerks {
+          display: inline-flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          width: 49%;
+          margin: 6px 0 0 0;
+          font-size: 13px;
+          justify-content: center;
+          color: #525252;
+        }
+
+        p.calculatedanswerks input {
+             padding: 0;
+          margin-bottom: 3px;
+          text-align: center;
+        }
+
+        .dimensionks, .material-calc {
+          text-align: left!important;
+        }
+
+        .maintableks tr {
+          border:none;
+        border-bottom: 1px solid #eee;
+        }
+
+
+    </style><!-- Google tag (gtag.js) -->
+
+    <script async src=
+            "https://www.googletagmanager.com/gtag/js?id=G-KKWJS0DPZ7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-KKWJS0DPZ7');
+    </script>
+    <title></title>
+</head>
+<body draggable="true" id="body" style=
+        "display: flex;flex-direction: column;overflow: hidden;width:100%;height:100%;"
+      cz-shortcut-listen="true">
+<section id="metal-weight-calculator">
+    <div>
+        <form name="form1" id="form1" method="post" onsubmit=
+                "CalculateWeight();return false" data-gtm-form-interact-id=
+                      "0">
+            <table class="maintableks" align="center">
+                <tbody>
+                <tr>
+                    <td><input value="Material" class="dimensionks"
+                               disabled></td>
+                    <td colspan="2" class="custom-select select-big">
+                        <select class="material-calc" name="product"
+                                onchange="rememberDropdown1(this);" id="remember1">
+                            <option>
+                                Steel
+                            </option>
+                            <option>
+                                Aluminum 1100
+                            </option>
+                            <option>
+                                Aluminum 2011
+                            </option>
+                            <option>
+                                Aluminum 2014
+                            </option>
+                            <option>
+                                Aluminum 2017
+                            </option>
+                            <option>
+                                Aluminum 2024
+                            </option>
+                            <option>
+                                Aluminum 3003
+                            </option>
+                            <option>
+                                Aluminum 5005
+                            </option>
+                            <option>
+                                Aluminum 5052
+                            </option>
+                            <option>
+                                Aluminum 5056
+                            </option>
+                            <option>
+                                Aluminum 5083
+                            </option>
+                            <option>
+                                Aluminum 5086
+                            </option>
+                            <option>
+                                Aluminum 6061
+                            </option>
+                            <option>
+                                Aluminum 6063
+                            </option>
+                            <option>
+                                Aluminum 7050
+                            </option>
+                            <option>
+                                Aluminum 7075
+                            </option>
+                            <option>
+                                Aluminum 7178
+                            </option>
+                            <option>
+                                Stainless 300 Series
+                            </option>
+                            <option>
+                                Stainless 400 Series
+                            </option>
+                            <option>
+                                Nickel 200
+                            </option>
+                            <option>
+                                Nickel 400
+                            </option>
+                            <option>
+                                Nickel R-405
+                            </option>
+                            <option>
+                                Nickel K-500
+                            </option>
+                            <option>
+                                Nickel 600
+                            </option>
+                            <option>
+                                Nickel 625
+                            </option>
+                            <option>
+                                Nickel 800H
+                            </option>
+                            <option>
+                                Nickel 800AT
+                            </option>
+                            <option>
+                                Nickel 825
+                            </option>
+                            <option>
+                                Nickel 330
+                            </option>
+                            <option>
+                                Nickel 20
+                            </option>
+                            <option>
+                                Nickel C-276
+                            </option>
+                            <option>
+                                Nickel 2545MD
+                            </option>
+                            <option>
+                                Magnesium
+                            </option>
+                            <option>
+                                Beryllium
+                            </option>
+                            <option>
+                                Titanium
+                            </option>
+                            <option>
+                                Zirconium
+                            </option>
+                            <option>
+                                Cast Iron
+                            </option>
+                            <option>
+                                Zinc
+                            </option>
+                            <option>
+                                Brass
+                            </option>
+                            <option>
+                                Columbium
+                            </option>
+                            <option>
+                                Copper
+                            </option>
+                            <option>
+                                Molybdenum
+                            </option>
+                            <option>
+                                Silver
+                            </option>
+                            <option>
+                                Lead
+                            </option>
+                            <option>
+                                Tantalum
+                            </option>
+                            <option>
+                                Tungsten
+                            </option>
+                            <option>
+                                Gold
+                            </option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><input value="Shape" class="dimensionks" disabled
+                    ></td>
+                    <td colspan="2" class="custom-select"><select class=
+                                                                          "material-calc" name="form" onchange=
+                                                                          "rememberDropdown2(this);ChangeLabel();ClearFields();showimage();"
+                                                                  id="remember2">
+                        <option selected value=
+                                "https://www.copperfitting.in/wp-content/uploads/2020/02/round.jpg">
+                            Round
+                        </option>
+                        <option value=
+                                        "https://www.copperfitting.in/wp-content/uploads/2020/02/sqr.jpg">
+                            Square
+                        </option>
+                        <option value=
+                                        "https://www.copperfitting.in/wp-content/uploads/2020/02/rect.jpg">
+                            Rectangle
+                        </option>
+                        <option value=
+                                        "https://www.copperfitting.in/wp-content/uploads/2020/02/hexagon.jpg">
+                            Hexagonal
+                        </option>
+                        <option value=
+                                        "https://www.copperfitting.in/wp-content/uploads/2020/02/octagon.jpg">
+                            Octagonal
+                        </option>
+                        <option value=
+                                        "https://www.copperfitting.in/wp-content/uploads/2020/02/sheet.jpg">
+                            Sheet
+                        </option>
+                        <option value=
+                                        "https://www.copperfitting.in/wp-content/uploads/2020/02/plate.jpg">
+                            Plate
+                        </option>
+                        <option value=
+                                        "https://www.copperfitting.in/wp-content/uploads/2020/02/tubular.jpg">
+                            Tubular
+                        </option>
+                        <option value=
+                                        "https://www.copperfitting.in/wp-content/uploads/2020/02/ring.jpg">
+                            Ring
+                        </option>
+                        <option value=
+                                        "https://www.copperfitting.in/wp-content/uploads/2020/02/pipe.jpg">
+                            Pipe
+                        </option>
+                    </select>
+                        <!-- <img src="https://www.copperfitting.in/wp-content/uploads/2020/02/round.jpg" name="pictures"> --></td>
+                </tr>
+                <tr style="display:none;" class="a-values">
+                    <td class="dimp"><input class="dimensionks dimq"
+                                            value="Quantity" disabled></td>
+                    <td><input autocomplete="off" type="number" step=
+                            "any" class="ksanswer" name="param4" size="6"
+                               maxlength="10"></td>
+                </tr>
+                <tr class="a-values">
+                    <td><input class="dimensionks" type="text" name=
+                            "lbl1" size="12" onfocus=
+                                       "if(navigator.appName == 'Netscape'&amp;&amp; parseInt(navigator.appVersion) == 3); else document.forms[0].param1.focus();"
+                               onblur="ChangeLabel();"></td>
+                    <td><input autocomplete="off" class="ksanswer" type=
+                            "number" step="any" name="param1" size="6" maxlength=
+                                       "10" data-gtm-form-interact-field-id="0"></td>
+                    <td class="custom-select"><select name="units1"
+                                                      onchange="rememberDropdown3(this);" id="remember3">
+                        <option>
+                            in
+                        </option>
+                        <option>
+                            ft
+                        </option>
+                        <option>
+                            yd
+                        </option>
+                        <option>
+                            mm
+                        </option>
+                        <option>
+                            cm
+                        </option>
+                        <option>
+                            m
+                        </option>
+                    </select></td>
+                </tr>
+                <tr class="a-values">
+                    <td><input autocomplete="off" class="dimensionks"
+                               type="text" name="lbl2" size="12" onfocus=
+                                       "if(!(navigator.appName == 'Netscape' &amp;&amp; parseInt(navigator.appVersion) == 3)){ if(document.forms[0].lbl2.value=='(no value)') document.forms[0].param3.focus(); else document.forms[0].param2.focus();}"></td>
+                    <td><input autocomplete="off" class="ksanswer" type=
+                            "number" step="any" name="param2" size="6" maxlength=
+                                       "10"></td>
+                    <td class="custom-select"><select name="units2"
+                                                      onchange="rememberDropdown4(this);" id="remember4">
+                        <option>
+                            in
+                        </option>
+                        <option>
+                            ft
+                        </option>
+                        <option>
+                            yd
+                        </option>
+                        <option>
+                            mm
+                        </option>
+                        <option>
+                            cm
+                        </option>
+                        <option>
+                            m
+                        </option>
+                    </select></td>
+                </tr>
+                <tr class="a-values">
+                    <td><input autocomplete="off" class="dimensionks"
+                               type="text" name="lbl3" size="12" onfocus=
+                                       "if(navigator.appName == 'Netscape'&amp;&amp; parseInt(navigator.appVersion) == 3); else document.forms[0].param3.focus();"
+                               onblur="ChangeLabel();"></td>
+                    <td><input autocomplete="off" class="ksanswer" type=
+                            "number" step="any" name="param3" size="6" maxlength=
+                                       "10" data-gtm-form-interact-field-id="1"></td>
+                    <td class="custom-select"><select name="units3"
+                                                      onchange="rememberDropdown5(this);" id="remember5"
+                                                      data-gtm-form-interact-field-id="2">
+                        <option>
+                            in
+                        </option>
+                        <option>
+                            ft
+                        </option>
+                        <option>
+                            yd
+                        </option>
+                        <option>
+                            mm
+                        </option>
+                        <option>
+                            cm
+                        </option>
+                        <option>
+                            m
+                        </option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><input class="ksbutton" type="submit"
+                                           name="Submit" value="Calculate"> <input type="reset"
+                                                                                   class="ksbutton ksclear" name="reset" value="Clear"
+                                                                                   onclick=
+                                                                                           "ChangeLabel();ClearFields();return false;"></td>
+                </tr>
+                <tr style="border:none;">
+                    <td colspan="3">
+                        <p class="calculatedanswerks"><input type="text"
+                                                             id="myLBS" maxlength="8" placeholder="00.00" name=
+                                                                     "result" size="10" onfocus=
+                                                                     "if(navigator.appName == 'Netscape'&amp;&amp; parseInt(navigator.appVersion) == 3); else document.forms[0].Submit.focus();"
+                                                             onblur="ChangeLabel();" onclick="copyToClipLBS();">
+                            Weight in LBS</p>
+                        <p class="calculatedanswerks"><input type="text"
+                                                             maxlength="8" placeholder="00.00" name="result2"
+                                                             size="10" onfocus=
+                                                                     "if(navigator.appName == 'Netscape'&amp;&amp; parseInt(navigator.appVersion) == 3); else document.forms[0].Submit.focus();"
+                                                             onblur="ChangeLabel();" id="myKGS" onclick=
+                                                                     "copyToClipKGS();">Weight in KGs</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+        <p style=
+                   "margin:0; background: yellow; display: none; text-align: center; padding:5px; transition: 1s; border-radius: 5px;font-weight: 700;"
+           id="myTooltip">Copy</p>
+        <script language="JavaScript">
+
+
+
+            function showimage() {
+                if (!document.images)
+                    return
+                document.images.pictures.src =
+              '' +      document.form1.form.options[document.form1.form.selectedIndex].value
+            }
+
+            var focusflag = false;
+            var Factor = new Array(47);
+            Factor[0] = .3462;
+            Factor[1] = .3604;
+            Factor[2] = .3568;
+            Factor[3] = .3568;
+            Factor[4] = .3533;
+            Factor[5] = .3498;
+            Factor[6] = .3462;
+            Factor[7] = .3427;
+            Factor[8] = .3356;
+            Factor[9] = .3392;
+            Factor[10] = .3392;
+            Factor[11] = .3462;
+            Factor[12] = .3462;
+            Factor[13] = .3568;
+            Factor[14] = .3568;
+            Factor[15] = .3604;
+            Factor[16] = 1.030;
+            Factor[17] = 1.010;
+            Factor[18] = 1.132;
+            Factor[19] = 1.125;
+            Factor[20] = 1.121;
+            Factor[21] = 1.075;
+            Factor[22] = 1.072;
+            Factor[23] = 1.075;
+            Factor[24] = 1.012;
+            Factor[25] = 1.012;
+            Factor[26] = 1.037;
+            Factor[27] = 1.012;
+            Factor[28] = 1.030;
+            Factor[29] = 1.132;
+            Factor[30] = 1.012;
+            Factor[31] = .229;
+            Factor[32] = .236;
+            Factor[33] = .575;
+            Factor[34] = .812;
+            Factor[35] = .911;
+            Factor[36] = .911;
+            Factor[37] = 1.084;
+            Factor[38] = 1.095;
+            Factor[39] = 1.144;
+            Factor[40] = 1.303;
+            Factor[41] = 1.339;
+            Factor[42] = 1.448;
+            Factor[43] = 2.120;
+            Factor[44] = 2.462;
+            Factor[45] = 2.466;
+            var RoundOff = 5;
+
+            function UnitConvertI(value, type) {
+
+
+                if (type == "cm")
+                    value = value / 2.54;
+                if (type == "m")
+                    value = (value * 100) / 2.54;
+                if (type == "mm")
+                    value = (value / 10) / 2.54;
+                if (type == "ft")
+                    value = value * 12;
+                if (type == "yd")
+                    value = value * 36;
+
+
+
+                return value;
+            }
+
+            function UnitConvertF(value, type) {
+
+                if (type == "cm")
+                    value = (value / 2.54) / 12;
+                if (type == "m")
+                    value = ((value * 100) / 2.54) / 12;
+                if (type == "mm")
+                    value = ((value / 10) / 2.54) / 12;
+                if (type == "in")
+                    value = value / 12;
+                if (type == "yd")
+                    value = value * 3;
+
+
+                return value;
+            }
+
+            function CheckNum(value, label) {
+                var String1 = new String(value);
+                var String2 = new String("");
+                var String3 = new String("");
+                var String4 = new String("");
+                var temp;
+                var i = 0;
+                var count = 0;
+                for (i = 0; i < String1.length; i++) {
+                    String2 = new String(parseFloat(String1.charAt(i)));
+                    if (String1.charAt(i) == ".")
+                        count++;
+
+                    if ((String2.length != 1 && String1.charAt(i) != '.') || count > 1) {
+                        alert("You entered an illegal value for the " + label);
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function CheckParam(Param1, Param2, Param3, Param4) {
+                var Form = document.forms[0].form.options[document.forms[0].form.selectedIndex].text;
+                var valid1 = 0,
+                    valid2 = 0,
+                    valid3 = 0,
+                    valid4 = 0;
+                var counter = 0;
+
+                if (Form == "Round" || Form == "Hexagonal" || Form == "Octagonal") {
+                    if (Param1 == "" || Param3 == "" || Param4 == "") {
+                        alert("You must fill in values for the Diameter And the Length!");
+                        return false;
+                    }
+                    valid1 = CheckNum(Param1, "Diameter");
+                    valid3 = CheckNum(Param3, "Length");
+                    valid4 = CheckNum(Param4, "Number of Pieces");
+                    if (valid1 != true || valid3 != true || valid4 != true)
+                        return false;
+                }
+
+                if (Form == "Square") {
+                    if (Param1 == "" || Param3 == "" || Param4 == "") {
+                        alert("You must fill in values for the Width And the Length!");
+                        return false;
+                    }
+                    valid1 = CheckNum(Param1, "Width");
+                    valid3 = CheckNum(Param3, "Length");
+                    valid4 = CheckNum(Param4, "Number of Pieces");
+                    if (valid1 != true || valid3 != true || valid4 != true)
+                        return false;
+                }
+
+                if (Form == "Flat" || Form == "Sheet" || Form == "Plate" || Form == "Coil" || Form == "Rectangle") {
+                    if (Param1 == "" || Param3 == "" || Param4 == "" || Param2 == "") {
+                        alert("You must fill in values for the Thickness And the Width And the Length!");
+                        return false;
+                    }
+                    valid1 = CheckNum(Param1, "Thickness");
+                    valid2 = CheckNum(Param2, "Width");
+                    valid3 = CheckNum(Param3, "Length");
+                    valid4 = CheckNum(Param4, "Number of Pieces");
+                    if (valid1 != true || valid3 != true || valid4 != true || valid2 != true)
+                        return false;
+
+                }
+                if (Form == "Tubular" || Form == "Pipe") {
+                    if (Param1 == "" || Param3 == "" || Param4 == "" || Param2 == "") {
+                        alert("You must fill in values for the Outer Diameter And the Wall And the Length!");
+                        return false;
+                    }
+                    valid1 = CheckNum(Param1, "Outer Diameter");
+                    valid2 = CheckNum(Param2, "Wall");
+                    valid3 = CheckNum(Param3, "Length");
+                    valid4 = CheckNum(Param4, "Number of Pieces");
+                    if (valid1 != true || valid2 != true || valid3 != true || valid4 != true)
+                        return false;
+
+                }
+                if (Form == "Circular") {
+                    if (Param1 == "" || Param3 == "" || Param4 == "") {
+                        alert("You must fill in values for the Diameter And the Thickness!");
+                        return false;
+                    }
+                    valid1 = CheckNum(Param1, "Diameter");
+                    valid3 = CheckNum(Param3, "Thickness");
+                    valid4 = CheckNum(Param4, "Number of Pieces");
+                    if (valid1 != true || valid3 != true || valid4 != true)
+                        return false;
+
+                }
+                if (Form == "Ring") {
+                    if (Param1 == "" || Param2 == "" || Param3 == "" || Param4 == "") {
+                        alert("You must fill in values for the Outer Diameter And the Inner Diameter And the Thickness!");
+                        return false;
+                    }
+                    valid1 = CheckNum(Param1, "Outer Diameter");
+                    valid2 = CheckNum(Param2, "Inner Diameter");
+                    valid3 = CheckNum(Param3, "Thickness");
+                    valid4 = CheckNum(Param4, "Number of Pieces");
+                    if (valid1 != true || valid2 != true || valid3 != true || valid4 != true)
+                        return false;
+
+                }
+
+
+
+                return true;
+            }
+
+            function CalculateWeight() {
+
+                var Param = new Array(5);
+                var Units = new Array(4);
+                var Convert;
+                var FormType;
+                var Result;
+
+                var Good;
+                Param[0] = document.forms[0].param1.value;
+                Param[1] = document.forms[0].param2.value;
+                Param[2] = document.forms[0].param3.value;
+                Param[3] = document.forms[0].param4.value;
+                Good = CheckParam(Param[0], Param[1], Param[2], Param[3]);
+                if (!Good)
+                    return;
+
+
+                Units[0] = document.forms[0].units1.options[document.forms[0].units1.selectedIndex].text;
+                Units[1] = document.forms[0].units2.options[document.forms[0].units2.selectedIndex].text;;
+                Units[2] = document.forms[0].units3.options[document.forms[0].units3.selectedIndex].text;;
+
+                Param[0] = UnitConvertI(Param[0], Units[0]);
+                Param[1] = UnitConvertI(Param[1], Units[1]);
+                Param[2] = UnitConvertF(Param[2], Units[2]);
+
+                FormType = document.forms[0].form.options[document.forms[0].form.selectedIndex].text;
+                if (document.forms[0].product.selectedIndex > 0)
+                    Convert = Factor[document.forms[0].product.selectedIndex - 1];
+                else
+                    Convert = 1;
+                document.forms[0].result.rsize = "4";
+
+
+
+                if (FormType == "Round") {
+                    Result = new String(2.6729 * Param[0] * Param[0] * Convert * Param[2] * Param[3]);
+                    document.forms[0].result.value = Result.substring(0, Result.indexOf(".") + RoundOff);
+                    document.forms[0].result2.value = Result.substring(0, Result.indexOf(".") + RoundOff) * 0.4535;
+
+                }
+                if (FormType == "Square") {
+                    Result = new String(3.4032 * Param[0] * Param[0] * Convert * Param[2] * Param[3]);
+                    document.forms[0].result.value = Result.substring(0, Result.indexOf(".") + RoundOff);
+                    document.forms[0].result2.value = Result.substring(0, Result.indexOf(".") + RoundOff) * 0.4535;
+                }
+                if (FormType == "Hexagonal") {
+                    Result = new String(2.9473 * Param[0] * Param[0] * Convert * Param[2] * Param[3]);
+                    document.forms[0].result.value = Result.substring(0, Result.indexOf(".") + RoundOff);
+                    document.forms[0].result2.value = Result.substring(0, Result.indexOf(".") + RoundOff) * 0.4535;
+                }
+                if (FormType == "Octagonal") {
+                    Result = new String(2.8193 * Param[0] * Param[0] * Convert * Param[2] * Param[3]);
+                    document.forms[0].result.value = Result.substring(0, Result.indexOf(".") + RoundOff);
+                    document.forms[0].result2.value = Result.substring(0, Result.indexOf(".") + RoundOff) * 0.4535;
+                }
+                if (FormType == "Flat" || FormType == "Sheet" || FormType == "Plate" || FormType == "Coil" || FormType == "Rectangle") {
+                    Result = new String(3.4032 * Param[0] * Convert * Param[1] * Param[2] * Param[3]);
+                    document.forms[0].result.value = Result.substring(0, Result.indexOf(".") + RoundOff);
+                    document.forms[0].result2.value = Result.substring(0, Result.indexOf(".") + RoundOff) * 0.4535;
+                }
+                if (FormType == "Tubular" || FormType == "Pipe") {
+                    Result = 10.68 * (Param[0] - Param[1]) * Convert * Param[1] * Param[2] * Param[3];
+                    if (Result < 0){
+                        alert("The Width of the Tube Wall cannot exceed the Outer Diameter!");
+                    }
+                    else {
+                        Result = new String(Result);
+                        document.forms[0].result.value = Result.substring(0, Result.indexOf(".") + RoundOff);
+                        document.forms[0].result2.value = Result.substring(0, Result.indexOf(".") + RoundOff) * 0.4535;
+                    }
+                }
+                if (FormType == "Circular") {
+                    Param[2] = UnitConvertI(Param[2], "ft");
+                    Result = new String(.22274 * Param[0] * Convert * Param[0] * Param[2] * Param[3]);
+                    document.forms[0].result.value = Result.substring(0, Result.indexOf(".") + RoundOff);
+                    document.forms[0].result2.value = Result.substring(0, Result.indexOf(".") + RoundOff) * 0.4535;
+                }
+                if (FormType == "Ring") {
+                    Param[2] = UnitConvertI(Param[2], "ft");
+                    Result = (.22274 * Param[2] * ((Param[0] * Param[0]) - (Param[1] * Param[1])) * Convert * Param[3]);
+                    if (Result < 0)
+                        alert("The Inner Diameter cannot exceed the Outer Diameter!");
+                    else {
+                        Result = new String(Result);
+                        document.forms[0].result.value = Result.substring(0, Result.indexOf(".") + RoundOff);
+                        document.forms[0].result2.value = Result.substring(0, Result.indexOf(".") + RoundOff) * 0.4535;
+                    }
+                }
+                return false;
+
+}
+
+
+
+            function ClearFields() {
+                document.forms[0].param1.value = "";
+                document.forms[0].param2.value = "";
+                document.forms[0].param3.value = "";
+                document.forms[0].param4.value = "1";
+                document.forms[0].result.value = "";
+                document.forms[0].result2.value = "";
+
+            }
+
+            function ChangeLabel() {
+                var formType;
+                formType = document.forms[0].form.options[document.forms[0].form.selectedIndex].text;
+
+
+
+                if (formType == "Round") {
+                    document.forms[0].lbl1.value = "Diameter";
+                    document.forms[0].lbl2.value = "";
+                    document.forms[0].lbl3.value = "Length";
+                }
+                if (formType == "Square") {
+                    document.forms[0].lbl1.value = "Width";
+                    document.forms[0].lbl2.value = "";
+                    document.forms[0].lbl3.value = "Length";
+                }
+                if (formType == "Hexagonal") {
+                    document.forms[0].lbl1.value = "Diameter";
+                    document.forms[0].lbl2.value = "";
+                    document.forms[0].lbl3.value = "Length";
+                }
+                if (formType == "Octagonal") {
+                    document.forms[0].lbl1.value = "Diameter";
+                    document.forms[0].lbl2.value = "";
+                    document.forms[0].lbl3.value = "Length";
+                }
+                if (formType == "Flat" || formType == "Sheet" || formType == "Plate" || formType == "Coil" || formType == "Rectangle") {
+                    document.forms[0].lbl1.value = "Thickness";
+                    document.forms[0].lbl2.value = "Width";
+                    document.forms[0].lbl3.value = "Length";
+                }
+                if (formType == "Tubular" || formType == "Pipe") {
+                    document.forms[0].lbl1.value = "Outer Diameter";
+                    document.forms[0].lbl2.value = "Wall";
+                    document.forms[0].lbl3.value = "Length";
+                }
+                if (formType == "Circular") {
+                    document.forms[0].lbl1.value = "Diameter";
+                    document.forms[0].lbl2.value = "";
+                    document.forms[0].lbl3.value = "Thickness";
+                }
+                if (formType == "Ring") {
+                    document.forms[0].lbl1.value = "Outer Diameter";
+                    document.forms[0].lbl2.value = "Inner Diameter";
+                    document.forms[0].lbl3.value = "Thickness";
+                }
+
+
+            }
+            ChangeLabel();
+            ClearFields();
+
+
+function copyToClipKGS() {
+var copyText = document.getElementById("myKGS");
+copyText.select();
+copyText.setSelectionRange(0, 99999);
+navigator.clipboard.writeText(copyText.value);
+
+var tooltip = document.getElementById("myTooltip");
+tooltip.innerHTML = "Copied: " + copyText.value + " kgs";
+var tooltip = document.getElementById("myTooltip");
+tooltip.style.display = "block";
+tooltip.style.backgroundColor = "#ffdf00";
+
+}
+
+function copyToClipLBS() {
+var copyText = document.getElementById("myLBS");
+copyText.select();
+copyText.setSelectionRange(0, 99999);
+navigator.clipboard.writeText(copyText.value);
+
+var tooltip = document.getElementById("myTooltip");
+tooltip.innerHTML = "Copied: " + copyText.value + " lbs";
+var tooltip = document.getElementById("myTooltip");
+tooltip.style.display = "block";
+tooltip.style.backgroundColor = "#ffdf00";
+
+}
+
+
+const btn = document.getElementById('myKGS');
+btn.addEventListener('click', () => {
+setTimeout(() => {
+const box = document.getElementById('myTooltip');
+box.style.display = 'none';
+}, 2000);
+});
+
+
+
+
+
+function rememberDropdown1(obj){
+localStorage.setItem("remValve1",obj.options[obj.selectedIndex].value);
+}
+function rememberDropdown2(obj){
+localStorage.setItem("remValve2",obj.options[obj.selectedIndex].value);
+}
+function rememberDropdown3(obj){
+localStorage.setItem("remValve3",obj.options[obj.selectedIndex].value);
+}
+function rememberDropdown4(obj){
+localStorage.setItem("remValve4",obj.options[obj.selectedIndex].value);
+}
+function rememberDropdown5(obj){
+localStorage.setItem("remValve5",obj.options[obj.selectedIndex].value);
+}
+
+
+
+
+
+
+document.getElementById("remember1").value = ""+localStorage.getItem("remValve1")+"";
+document.getElementById("remember2").value = ""+localStorage.getItem("remValve2")+"";
+document.getElementById("remember3").value = ""+localStorage.getItem("remValve3")+"";
+document.getElementById("remember4").value = ""+localStorage.getItem("remValve4")+"";
+document.getElementById("remember5").value = ""+localStorage.getItem("remValve5")+"";
+
+
+<!-- Google tag (gtag.js) -->
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-B9T58WLM9Z');
+
+        </script>
+        <script async src=
+                "https://www.googletagmanager.com/gtag/js?id=G-B9T58WLM9Z"></script>
+    </div>
+</section>
+</body>
+</html>

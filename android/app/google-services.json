@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "497353826003",
+    "firebase_url": "https://massma-dialer.firebaseio.com",
+    "project_id": "massma-dialer",
+    "storage_bucket": "massma-dialer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497353826003:android:a2a02d9afd0cc058393e26",
+        "android_client_info": {
+          "package_name": "metal.hughes.tata_smart_metal_dialer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497353826003-a2vclefdqiv4hfppe3ppk5a7h6lt02np.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "metal.hughes.tata_smart_metal_dialer",
+            "certificate_hash": "f2ba3f0db595ccda92dca9bdf9078b86fbb508d0"
+          }
+        },
+        {
+          "client_id": "497353826003-ln5kka10ekehkjn89ejiffff3h2m29ii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1idRUK0e_dbIxBNdk79QfZd3wNiarUPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497353826003-ln5kka10ekehkjn89ejiffff3h2m29ii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
